@@ -18,7 +18,7 @@ $result=mysqli_query($link, $query) or die(mysqli_error($link));
 require_once './cache.php';
 
 $parser = new ParserCurl();
-$page = $parser->parserQuery("https://www.avito.ru/kazan/lichnye_veschi");
+$page = $parser->parserQuery("$linkAvito");
 
 
 

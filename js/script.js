@@ -5,6 +5,10 @@ $('#myActionButton').click(function(){
     );
 });
 $("#formButton").on("click",function(){
+    $.post(
+        "del.php", 
+        { myActionName: "Очищаем" } 
+    );  
 var link=$("#link").val();
 alert(link);
 $.ajax({
