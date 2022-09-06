@@ -1,4 +1,5 @@
 <?php
+
 $linkAvito=$_POST['link'];
 
 $host = 'localhost'; // имя хоста
@@ -95,4 +96,3 @@ foreach ($arrResult as $arr)
 require_once './utilite/patchFileExcel.php';
 
 
-?>

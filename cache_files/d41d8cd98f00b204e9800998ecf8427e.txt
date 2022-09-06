@@ -1,2 +1,0 @@
-cURL error (3):
- URL using bad/illegal format or missing URL
