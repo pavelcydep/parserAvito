@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-                        <script nonce="M5fGOH3s8gA4AKkJ2MQofA==">
+                        <script nonce="hMOG6RO0ZFaTfZhj5q7XTA==">
         window.dataLayer = null;
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -24,11 +24,11 @@
     <meta charset="UTF-8">
     <title>Доступ временно заблокирован</title>
                 <link rel="stylesheet" href="https://static.avito.ru/s/cc/styles/8c4cb0efda035c20d386.css">
-<script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://static.avito.ru/s/cc/bundles/cf6340bd9db9f0c61724.js" ></script>
+<script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://static.avito.ru/s/cc/bundles/cf6340bd9db9f0c61724.js" ></script>
     
 
     <link rel="stylesheet" href="https://static.avito.ru/s/cc/styles/985c816d767d87807bc0.css">
-<script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://static.avito.ru/s/cc/bundles/9c5cd459e15a1fdadcdb.js" ></script>
+<script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://static.avito.ru/s/cc/bundles/9c5cd459e15a1fdadcdb.js" ></script>
 </head>
 <body>
                         <noscript>
@@ -55,12 +55,12 @@
 
                                 <textarea id="h-captcha-response" name="e-captcha-response" style="display: none;"></textarea>
 
-                <script nonce="M5fGOH3s8gA4AKkJ2MQofA==">
+                <script nonce="hMOG6RO0ZFaTfZhj5q7XTA==">
                     function sethCaptchaResponse(response) {
                         document.getElementById("h-captcha-response").value = response;
                     }
                 </script>
-                <script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://hcaptcha.com/1/api.js?hl=ru&recaptchacompat=off" async defer></script>
+                <script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://hcaptcha.com/1/api.js?hl=ru&recaptchacompat=off" async defer></script>
                         <div class='form-action'>
                 <button class="button button-origin" type="submit" name="submit">Отправить</button>
             </div>
@@ -73,9 +73,9 @@
     </div>
     </div>
 
-            <script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://static.avito.ru/s/cc/chunks/vendors~3aed0e1873f8a9e1501f0b0b51f4c086~91ac0639b450d3cf68aad1b462aa0300~d446c9efe1935fbf69cc24bbe2635c3b.ddc77c44fb6ddc7b36f1.js" ></script>
-<script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://static.avito.ru/s/cc/chunks/default~d446c9efe1935fbf69cc24bbe2635c3b~db8ad8be980187234a368fef539edadf~df485e34331ffe15da321cbe18cad04a.21a9ddcb3ef333e04df7.js" ></script>
-<script nonce="M5fGOH3s8gA4AKkJ2MQofA==" src="https://static.avito.ru/s/cc/bundles/100152c7d762f13dfaba.js" ></script>
+            <script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://static.avito.ru/s/cc/chunks/vendors~3aed0e1873f8a9e1501f0b0b51f4c086~91ac0639b450d3cf68aad1b462aa0300~d446c9efe1935fbf69cc24bbe2635c3b.ddc77c44fb6ddc7b36f1.js" ></script>
+<script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://static.avito.ru/s/cc/chunks/default~d446c9efe1935fbf69cc24bbe2635c3b~db8ad8be980187234a368fef539edadf~df485e34331ffe15da321cbe18cad04a.21a9ddcb3ef333e04df7.js" ></script>
+<script nonce="hMOG6RO0ZFaTfZhj5q7XTA==" src="https://static.avito.ru/s/cc/bundles/100152c7d762f13dfaba.js" ></script>
 </body>
 </html>
 

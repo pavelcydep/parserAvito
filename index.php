@@ -4,7 +4,7 @@ require_once './cache.php';
 
 $parser = new ParserCurl();
 $page = $parser->parserQuery("https://www.avito.ru/kazan/avtomobili/s_probegom/audi-ASgBAgICAkSGFMjmAeC2Dd6XKA?cd=1&radius=200");
-//echo $page;
+
 
 
 require_once 'phpQuery//phpQuery.php';
@@ -63,17 +63,28 @@ foreach ($src as $item)
 
 }
 
+
+
+$query="CREATE TABLE avitotable (
+    id int(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    dates text NOT NULL,
+    view text NOT NULL,
+    user text NOT NULL,
+    link text NOT NULL
+)";
+$result=mysqli_query($link, $query) or die(mysqli_error($link));
 foreach ($arrResult as $arr)
 {
     $arrDate = $arr[0];
+    $arrDates = substr($arrDate, 4); ;
     $arrViews = $arr[1];
     $arrUsers = $arr[2];
     $arrAvito = $arr[3];
-    $query = "INSERT INTO baseavito (dates,view,user,link) VALUES ('$arrDate','$arrViews','$arrUsers','$arrAvito')";
-
-    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    $query = "INSERT INTO avitotable (dates,view,user,link) VALUES ('$arrDates','$arrViews','$arrUsers','$arrAvito')";
+    $result=mysqli_query($link, $query) or die(mysqli_error($link));
+    print_r($result);
     require_once './utilite/patchFileExcel.php';
-
+    
 }
 
 ?>

@@ -46,10 +46,10 @@ $sheet->setCellValueExplicit("A1", '1.', PHPExcel_Cell_DataType::TYPE_STRING);
 $sheet->setCellValueExplicit("B2", '1.', PHPExcel_Cell_DataType::TYPE_STRING);
 $sheet->setCellValueExplicit("B3", '1.', PHPExcel_Cell_DataType::TYPE_STRING);
 $sheet->setCellValueExplicit("B4", '1.', PHPExcel_Cell_DataType::TYPE_STRING);
-$sheet->getColumnDimensionByColumn("A1")->setAutoSize(true);
-$sheet->getColumnDimensionByColumn("B1")->setAutoSize(true);
-$sheet->getColumnDimensionByColumn("C1")->setAutoSize(true);
-$sheet->getColumnDimensionByColumn("D1")->setAutoSize(true);
+$sheet->getColumnDimension("A")->setWidth(20);
+$sheet->getColumnDimension("B")->setWidth(20);
+$sheet->getColumnDimension("C")->setWidth(20);
+$sheet->getColumnDimension("D")->setWidth(80);
 $sheet->getRowDimension("2")->setRowHeight(50);
 
 
@@ -57,23 +57,22 @@ $sheet->setCellValue("A1", "Дата");
 $sheet->setCellValue("B1", "Просмотры");
 $sheet->setCellValue("C1", "Пользователь");
 $sheet->setCellValue("D1", "Ссылка");
-$query = "SELECT * FROM baseavito";
-$dateFile=date('l');
+$query = "SELECT * FROM avitotable WHERE  dates LIKE 'сегодня%' or dates LIKE 'вчера%'";
+$patchDataTable=date("jmYh_I_s_A");
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
-for ($i = 2; $i < 10; $i++) 
-    {
-    foreach($data as $item)
-        {
-
-            $sheet->setCellValue("A$i", "$item[dates]");
-            $sheet->setCellValue("B$i", "$item[view]");
-            $sheet->setCellValue("C$i", "$item[user]");
-            $sheet->setCellValue("D$i", "$item[link]");
-            $objWriter->save(__DIR__ . "/file_$dateFile.xlsx");
+     foreach($data as $item)
+       {
+            $ind=$item['id']+1;
+            $sheet->setCellValue("A$ind", "$item[dates]");
+            $sheet->setCellValue("B$ind", "$item[view]");
+            $sheet->setCellValue("C$ind", "$item[user]");
+            $sheet->setCellValue("D$ind", "$item[link]");
+            $objWriter->save(__DIR__ . "/filesExcel/file_$patchDataTable.xlsx");
             
+        
         } 
-
-    }
+$query = "DROP TABLE avitotable";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
 
 ?>
