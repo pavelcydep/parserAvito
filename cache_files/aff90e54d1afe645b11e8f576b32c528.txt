@@ -1,0 +1,2 @@
+cURL error (6):
+ Couldn't resolve host name

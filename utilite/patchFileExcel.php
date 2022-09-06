@@ -2,11 +2,7 @@
 require_once __DIR__ . '../../PHPExcel-1.8/Classes/PHPExcel.php';
 require_once __DIR__ . '../../PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php';
 require_once 'phpQuery//phpQuery.php';
-
-$host = 'localhost'; 
-$user = 'root';      
-$pass = 'root';          
-$name = 'avito';    
+ 
 
 $link = mysqli_connect($host, $user, $pass, $name);
 $xls = new PHPExcel();
@@ -57,22 +53,38 @@ $sheet->setCellValue("A1", "Дата");
 $sheet->setCellValue("B1", "Просмотры");
 $sheet->setCellValue("C1", "Пользователь");
 $sheet->setCellValue("D1", "Ссылка");
-$query = "SELECT * FROM avitotable WHERE  dates LIKE 'сегодня%' or dates LIKE 'вчера%'";
+$host = 'localhost'; 
+$user = 'root';      
+$pass = 'root';          
+$name = 'avito';    
+
+$link = mysqli_connect($host, $user, $pass, $name);
+
 $patchDataTable=date("jmYh_I_s_A");
-$result = mysqli_query($link, $query) or die(mysqli_error($link));
-for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
+
+
+
+//for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
+$data = array(); // create an array
+$query = "SELECT * FROM avitotable WHERE  dates LIKE 'сегодня%' or dates LIKE 'вчера%'";
+$result=mysqli_query($link, $query) or die(mysqli_error($link));
+while($row = mysqli_fetch_assoc($result)){ 
+  $data[] = $row; }
+print_r($data);
      foreach($data as $item)
        {
+         
             $ind=$item['id']+1;
             $sheet->setCellValue("A$ind", "$item[dates]");
             $sheet->setCellValue("B$ind", "$item[view]");
             $sheet->setCellValue("C$ind", "$item[user]");
             $sheet->setCellValue("D$ind", "$item[link]");
+           
             $objWriter->save(__DIR__ . "/filesExcel/file_$patchDataTable.xlsx");
             
         
         } 
-$query = "DROP TABLE avitotable";
-$result = mysqli_query($link, $query) or die(mysqli_error($link));
+
+
 
 ?>
