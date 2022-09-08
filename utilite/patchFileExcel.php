@@ -81,7 +81,12 @@ print_r($data);
             $sheet->setCellValue("D$ind", "$item[link]");
            
             $objWriter->save(__DIR__ . "/filesExcel/file_$patchDataTable.xlsx");
-            
+            $file = __DIR__ . "/filesExcel/file_$patchDataTable.xlsx";
+            header('Content-Description: File Transfer');
+            header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment; filename=' . basename($file));
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Length: ' . filesize($file));
         
         } 
 
